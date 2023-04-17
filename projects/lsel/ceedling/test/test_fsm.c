@@ -28,8 +28,8 @@ void test_fsm_nullWhenEmptyTransition(void)
 
     f = fsm_new(tt);
 
-    //TEST_ASSERT_EQUAL (XXX);
-    TEST_FAIL_MESSAGE("Implement the test");
+    TEST_ASSERT_EQUAL (NULL, f);
+
 }
 
 void test_fsm_validTransitionNoOutput(void)

@@ -2,7 +2,13 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Ceedling - Debug test",
+            "name": "Ceedling LLDB",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/ceedling/build/test/out/${command:ceedlingExplorer.debugTestExecutable}"
+        },
+        {
+            "name": "Ceedling - GDB test",
             "type": "cppdbg", 
             "request": "launch",
             "args": [],
@@ -10,8 +16,8 @@
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": false,
-            "MIMode": "gdb",
-            "miDebuggerPath": "gdb",
+            "MIMode": "lldb",
+            "miDebuggerPath": "lldb",
             "program": "${workspaceFolder}/ceedling/build/test/out/${command:ceedlingExplorer.debugTestExecutable}",
             "setupCommands": [
                 {

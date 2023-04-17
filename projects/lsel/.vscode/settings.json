@@ -5,6 +5,6 @@
     "ceedlingExplorer.problemMatching": {
         "mode": "gcc"
     },
-    "ceedlingExplorer.debugConfiguration": "Ceedling - Debug test",
+    "ceedlingExplorer.debugConfiguration": "Ceedling LLDB",
     "ceedlingExplorer.projectPath": "./ceedling"
 }
