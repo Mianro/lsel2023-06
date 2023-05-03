@@ -18,10 +18,11 @@ struct fsm_t {
   fsm_trans_t* tt;
 };
 
-fsm_t* fsm_new (fsm_trans_t* tt);
-void fsm_init (fsm_t* f, fsm_trans_t* tt);
+fsm_t* fsm_new (fsm_trans_t* tt, int size, int max_state);
+bool fsm_init (fsm_t* f, fsm_trans_t* tt, int size, int max_state);
 void fsm_fire (fsm_t* f);
 void fsm_destroy (fsm_t* f);
+fsm_trans_t* fsm_valid_tt(fsm_trans_t* tt,int size);
 
 #ifdef __GNUC__
 #define UNUSED(d) d __attribute__((unused))
