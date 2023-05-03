@@ -71,6 +71,16 @@ snake_display_render(snake_game_t* p_game)
   /* Draw snake head as BLUE */
   /* Draw snake body as RED */
 
+	struct segment_t *seg_i;
+	memset(fb, 0, 128);
+	fb->pixel[p_game->apple.x][p_game->apple.y]=0x07E0;
+	for(seg_i = p_game->snake.tail; seg_i->next; seg_i=seg_i->next) {
+		fb->pixel[p_game->snake.tail->x][p_game->snake.tail->y] = 0x001F;
+	}
+
+	fb->pixel[p_game->snake.head.x][p_game->snake.head.y] = 0xF800; 
+
+
 }
 
 
@@ -81,10 +91,21 @@ snake_display_init(snake_game_t* p_game)
   p_game->limits.y = 8;
 
   /* Get from original code. Return 0 if wrong and 1 if correct */
+
+	fbfd = open_fbdev("RPi-Sense FB");
+	if (fbfd <= 0) {
+		printf("Error: cannot open framebuffer device.\n");
+		return 0; 
+		
+	}else{
+		return 1; 
+	}
+
 }
 
 void
 snake_display_close(snake_game_t* p_game)
 {
   /* Get from original code, if something to close */
+  close(fbfd);
 }
