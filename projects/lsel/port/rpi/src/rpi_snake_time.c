@@ -6,7 +6,6 @@ int
 snake_time_init (snake_game_t* p_game) 
 {
   /* Get from original code, if any. Return 0 if wrong and 1 if correct */
- return srand (time(NULL));
 }
 
 void 

@@ -6,7 +6,10 @@
 int
 snake_random_init(snake_game_t* p_game)
 {
+  srand(time(NULL));
   /* Get from original code. Return 0 if wrong and 1 if correct */
+  return 1; 
+   
 }
 
 int
@@ -15,6 +18,7 @@ snake_random_get(int limit)
   /* Get from original code */
   /* return random number between 0 (included) and limit (not included). */
   /* Use modulo (%) */
+  return rand()%limit;
 
 }
 
