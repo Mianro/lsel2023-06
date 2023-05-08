@@ -293,6 +293,8 @@ void test_fsm_validTransitionTable(void)
 
 
 
+
+
 void test_fsm_validLastTransition(void)
 
 {
@@ -310,6 +312,8 @@ void test_fsm_validLastTransition(void)
                 , -1, do_nothing},
 
     };
+
+
 
 
 
@@ -333,7 +337,127 @@ void test_fsm_validLastTransition(void)
 
    ((void *)0)
 
-   ), (UNITY_UINT)(120), UNITY_DISPLAY_STYLE_INT);
+   ), (UNITY_UINT)(122), UNITY_DISPLAY_STYLE_INT);
+
+
+
+    fsm_destroy(f);
+
+}
+
+
+
+
+
+void test_fsm_NULL_argument_valid_InOut(void)
+
+{
+
+    fsm_trans_t tt[] = {
+
+        {0, is_true, 1, do_nothing},
+
+        {0, 
+
+           ((void *)0)
+
+               , 2, 
+
+                    ((void *)0)
+
+                        },
+
+        {-1, 
+
+            ((void *)0)
+
+                , -1, 
+
+                      ((void *)0)
+
+                          },
+
+    };
+
+
+
+
+
+    fsm_t *f = (fsm_t*)1;
+
+
+
+    int size = sizeof(tt)/sizeof(tt[0]);
+
+
+
+    f = fsm_new(tt, size, 2);
+
+
+
+    do {if ((((f)) != 
+
+   ((void *)0)
+
+   )) {} else {UnityFail( (((" Expected Non-NULL"))), (UNITY_UINT)((UNITY_UINT)((UNITY_UINT)(143))));}} while(0);
+
+
+
+    fsm_destroy(f);
+
+}
+
+
+
+
+
+void test_fsm_NULL_IF_WRONG_DATA(void)
+
+{
+
+    fsm_trans_t tt[] = {
+
+        {-1, is_true, 1, do_nothing},
+
+        {0, is_true, 2, do_nothing},
+
+        {-1, 
+
+            ((void *)0)
+
+                , -1, 
+
+                      ((void *)0)
+
+                          },
+
+    };
+
+
+
+
+
+    fsm_t *f = (fsm_t*)1;
+
+
+
+    int size = sizeof(tt)/sizeof(tt[0]);
+
+
+
+    f = fsm_new(tt, size, 2);
+
+
+
+    UnityAssertEqualNumber((UNITY_INT)((
+
+   ((void *)0)
+
+   )), (UNITY_INT)((f)), (
+
+   ((void *)0)
+
+   ), (UNITY_UINT)(164), UNITY_DISPLAY_STYLE_INT);
 
 
 

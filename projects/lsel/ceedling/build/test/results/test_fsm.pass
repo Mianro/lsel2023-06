@@ -24,15 +24,23 @@
   :message: ''
   :unity_test_time: 0
 - :test: test_fsm_validLastTransition
-  :line: 106
+  :line: 107
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_NULL_argument_valid_InOut
+  :line: 128
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_NULL_IF_WRONG_DATA
+  :line: 149
   :message: ''
   :unity_test_time: 0
 :failures: []
 :ignores: []
 :counts:
-  :total: 6
-  :passed: 6
+  :total: 8
+  :passed: 8
   :failed: 0
   :ignored: 0
 :stdout: []
-:time: 0.0013910730049246922
+:time: 0.0012703469983534887

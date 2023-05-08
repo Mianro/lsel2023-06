@@ -48,9 +48,6 @@ fsm_init (fsm_t* f, fsm_trans_t* tt, int size, int max_state)
           return false;
         }
 
-        if(!(tt[size-1].dest_state == -1 && tt[size-1].orig_state == -1 && tt[size-1].in == NULL && tt[size-1].out==NULL)){
-          return false;
-        }
 
 //Si hay datos erroneos no se debe de reservar memoria
         for (int i = 0; i < (size-1); i++) {
@@ -91,10 +88,16 @@ fsm_valid_tt(fsm_trans_t* tt, int size)
 
   for(int i = 0 ; i < (size-1); i++)
   {
+
    if(tt[i].dest_state == -1 || tt[i].orig_state == -1)
    {
       return NULL;
    }
   }
+
+  if(!(tt[size-1].dest_state == -1 && tt[size-1].orig_state == -1 && tt[size-1].in == NULL && tt[size-1].out==NULL)){
+    return NULL;
+  }
+  
   return tt;
 }

@@ -1,6 +1,8 @@
 #ifndef FSM_H_
 #define FSM_H_
 
+#include <stdbool.h>
+
 typedef struct fsm_t fsm_t;
 
 typedef int (*fsm_input_func_t) (fsm_t*);

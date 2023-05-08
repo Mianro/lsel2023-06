@@ -18,6 +18,8 @@ extern void test_fsm_validTransitionNoOutput(void);
 extern void test_fsm_validTransitionWithOutput(void);
 extern void test_fsm_validTransitionTable(void);
 extern void test_fsm_validLastTransition(void);
+extern void test_fsm_NULL_argument_valid_InOut(void);
+extern void test_fsm_NULL_IF_WRONG_DATA(void);
 
 
 /*=======Mock Management=====*/
@@ -90,7 +92,9 @@ int main(void)
   run_test(test_fsm_validTransitionNoOutput, "test_fsm_validTransitionNoOutput", 37);
   run_test(test_fsm_validTransitionWithOutput, "test_fsm_validTransitionWithOutput", 60);
   run_test(test_fsm_validTransitionTable, "test_fsm_validTransitionTable", 87);
-  run_test(test_fsm_validLastTransition, "test_fsm_validLastTransition", 106);
+  run_test(test_fsm_validLastTransition, "test_fsm_validLastTransition", 107);
+  run_test(test_fsm_NULL_argument_valid_InOut, "test_fsm_NULL_argument_valid_InOut", 128);
+  run_test(test_fsm_NULL_IF_WRONG_DATA, "test_fsm_NULL_IF_WRONG_DATA", 149);
 
   CMock_Guts_MemFreeFinal();
   return UnityEnd();

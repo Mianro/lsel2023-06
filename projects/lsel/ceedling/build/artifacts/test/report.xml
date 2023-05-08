@@ -20,10 +20,16 @@
 		<Test id="6">
 			<Name>test/test_fsm.c::test_fsm_validLastTransition</Name>
 		</Test>
+		<Test id="7">
+			<Name>test/test_fsm.c::test_fsm_NULL_argument_valid_InOut</Name>
+		</Test>
+		<Test id="8">
+			<Name>test/test_fsm.c::test_fsm_NULL_IF_WRONG_DATA</Name>
+		</Test>
 	</SuccessfulTests>
 	<IgnoredTests/>
 	<Statistics>
-		<Tests>6</Tests>
+		<Tests>8</Tests>
 		<Ignores>0</Ignores>
 		<FailuresTotal>0</FailuresTotal>
 		<Errors>0</Errors>
