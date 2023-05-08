@@ -2,7 +2,17 @@
 #include "snake_display.h"
 #include "snake_time.h"
 
+#include <string.h>
+#include <dirent.h>
+#include <fcntl.h>
+#include <stdint.h>
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+
 snake_game_t game;
+
 
 int main(int argc, char* args[])
 {
