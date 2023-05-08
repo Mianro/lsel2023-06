@@ -103,6 +103,7 @@ void test_fsm_validTransitionTable(void)
     fsm_destroy(f);
 }
 
+//La ultima transicion debe de ser invalida
 void test_fsm_validLastTransition(void)
 {
     fsm_trans_t tt[] = {
@@ -110,6 +111,69 @@ void test_fsm_validLastTransition(void)
         {0, is_true, 2, do_nothing},
         {-1, NULL, -1, do_nothing},
     };
+
+
+    fsm_t *f = (fsm_t*)1;
+
+    int size = sizeof(tt)/sizeof(tt[0]);
+
+    f = fsm_new(tt, size, 2);
+
+    TEST_ASSERT_EQUAL (NULL, f);
+
+    fsm_destroy(f);
+}
+
+//Las funciones de guarda y actualización pueden ser NULL
+void test_fsm_NULL_argument_valid_InOut(void)
+{
+    fsm_trans_t tt[] = {
+        {0, is_true, 1, do_nothing},
+        {0, NULL, 2, NULL},
+        {-1, NULL, -1, NULL},
+    };
+
+
+    fsm_t *f = (fsm_t*)1;
+
+    int size = sizeof(tt)/sizeof(tt[0]);
+
+    f = fsm_new(tt, size, 2);
+
+    TEST_ASSERT_NOT_NULL (f);
+
+    fsm_destroy(f);
+}
+
+// Si hay datos erróneos no debe reservar la memoria
+void test_fsm_NULL_IF_WRONG_DATA(void)
+{
+    fsm_trans_t tt[] = {
+        {-1, is_true, 1, do_nothing},
+        {0, is_true, 2, do_nothing},
+        {-1, NULL, -1, NULL},
+    };
+
+
+    fsm_t *f = (fsm_t*)1;
+
+    int size = sizeof(tt)/sizeof(tt[0]);
+
+    f = fsm_new(tt, size, 2);
+
+    TEST_ASSERT_EQUAL (NULL, f);
+
+    fsm_destroy(f);
+}
+
+void test_fsm_NULL_IF_WRONG_DATA(void)
+{
+    fsm_trans_t tt[] = {
+        {-1, is_true, 1, do_nothing},
+        {0, is_true, 2, do_nothing},
+        {-1, NULL, -1, NULL},
+    };
+
 
     fsm_t *f = (fsm_t*)1;
 
