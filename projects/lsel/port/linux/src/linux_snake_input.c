@@ -64,7 +64,7 @@ snake_input_update_new_heading (snake_game_t* p_game)
         p_game->new_heading = RIGHT;
         break;
       default:
-        // Ignore other keys
+        
         break;
     }
   }

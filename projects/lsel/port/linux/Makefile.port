@@ -22,7 +22,8 @@ C_DEFS +=
 AS_INCLUDES += 
 
 # Directories with required header files for port files
-INCLUDES += -I$(PORT)/$(PLATFORM)/include
+ INCLUDES += -I$(PORT)/$(PLATFORM)/include
+#  INCLUDES += -$(COMMON)/include
 
 bin: $(OUTPUT)/$(TARGET)$(EXT)
 

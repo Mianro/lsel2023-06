@@ -19,25 +19,24 @@
                 "MIMode": "gdb",
                 "miDebuggerPath": "gdb",
                 "program": "${workspaceFolder}/output/${workspaceFolderBasename}"
-              },
-              "osx": {
+            },
+            "osx": {
                 "name": "Debug PC -mac",
                 "type": "cppdbg",
                 "request": "launch",
                 "MIMode": "lldb",
                 "miDebuggerPath": "/Users/xxxxx/.vscode/extensions/ms-vscode.cpptools-1.13.8-darwin-x64/debugAdapters/lldb-mi/bin/lldb-mi",
                 "program": "${workspaceFolder}/output/${workspaceFolderBasename}"
-              },
-              "windows": {
+            },
+            "windows": {
                 "name": "Debug PC -win",
                 "type": "cppdbg",
                 "request": "launch",
                 "MIMode": "gdb",
                 "miDebuggerPath": "gdb.exe",
                 "program": "${workspaceFolder}/output/${workspaceFolderBasename}.exe"
-              },
-              //"preLaunchTask": "Build Linux PC"
-        },        
+            }
+        },
         {
             "name": "Ceedling - Debug test",
             "type": "cppdbg",
@@ -57,7 +56,7 @@
                     "ignoreFailures": true
                 }
             ]
-        },        
+        },
         {
             "name": "Debug device STM32F411RE",
             "type": "cortex-debug",
@@ -67,9 +66,8 @@
             "runToEntryPoint": "main",
             "servertype": "openocd",
             "device": "STM32F411RE",
-            //"serverpath": "C:/Program Files/openocd/bin/openocd.exe", // If you are not using Windows, you must remove this line
             "configFiles": [
-            "port/nucleo_stm32f411re/openocd.cfg"
+                "port/nucleo_stm32f411re/openocd.cfg"
             ],
             "preLaunchTask": "Clean & Re-Build NUCLEO_STM32F411RE",
             "svdFile": "../../svd/STM32F411.svd",
@@ -80,12 +78,38 @@
                 "source": "probe",
                 "decoders": [
                     {
-                    "type": "console",
-                    "label": "ITM",
-                    "port": 0
+                        "type": "console",
+                        "label": "ITM",
+                        "port": 0
                     }
                 ]
-            },
+            }
+        },
+        {
+            "name": "C/C++: gcc Compilar y depurar el archivo activo",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/${fileBasenameNoExtension}",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Habilitar la impresión con sangría para gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Establecer tipo de desensamblado en Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "C/C++: gcc compilar archivo activo",
+            "miDebuggerPath": "/usr/bin/gdb"
         }
     ]
 }

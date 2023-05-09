@@ -19,4 +19,6 @@ void
 snake_time_delay_ms (uint32_t ms) 
 {
   /* TODO Copy from rpi solution */
+    usleep(ms*1000);
+
 }
