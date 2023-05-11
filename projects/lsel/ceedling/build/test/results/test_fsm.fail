@@ -1,0 +1,66 @@
+---
+:source:
+  :path: test
+  :file: test_fsm.c
+:successes:
+- :test: test_fsm_new_nullWhenNullTransition
+  :line: 98
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_nullWhenEmptyTransition
+  :line: 110
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_validTransitionTable
+  :line: 176
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_validLastTransition
+  :line: 196
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_valid_state
+  :line: 218
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_NULL_argument_valid_InOut
+  :line: 240
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_NULL_IF_WRONG_DATA
+  :line: 261
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_NULL_IFWRONGDATA_INIT
+  :line: 282
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_INPUT_FUNC_VALID_T
+  :line: 301
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_ORIG_STATE_NOT_EQUAL_CURRENT_STATE
+  :line: 324
+  :message: ''
+  :unity_test_time: 0
+:failures:
+- :test: test_fsm_validTransitionNoOutput
+  :line: 124
+  :message: Function do_nothing.  Called fewer times than expected.
+  :unity_test_time: 0
+- :test: test_fsm_validTransitionWithOutput
+  :line: 149
+  :message: Function do_nothing.  Called fewer times than expected.
+  :unity_test_time: 0
+- :test: test_fsm_VALID_T_NO_INPUT_FUNC
+  :line: 364
+  :message: Expected 0 Was -1
+  :unity_test_time: 0
+:ignores: []
+:counts:
+  :total: 13
+  :passed: 10
+  :failed: 3
+  :ignored: 0
+:stdout: []
+:time: 0.0012335700012044981

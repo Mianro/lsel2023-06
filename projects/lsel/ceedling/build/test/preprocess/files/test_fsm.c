@@ -5,6 +5,10 @@
 
 
 
+
+
+
+
 void setUp(void)
 
 {
@@ -18,8 +22,6 @@ void tearDown(void)
 {
 
 }
-
-
 
 void test_fsm_new_nullWhenNullTransition(void)
 
@@ -45,9 +47,15 @@ void test_fsm_new_nullWhenNullTransition(void)
 
    ((void *)0)
 
-   ), (UNITY_UINT)(20), UNITY_DISPLAY_STYLE_INT);
+   ), (UNITY_UINT)(104), UNITY_DISPLAY_STYLE_INT);
 
 }
+
+
+
+
+
+
 
 
 
@@ -87,7 +95,7 @@ void test_fsm_nullWhenEmptyTransition(void)
 
    ((void *)0)
 
-   ), (UNITY_UINT)(33), UNITY_DISPLAY_STYLE_INT);
+   ), (UNITY_UINT)(120), UNITY_DISPLAY_STYLE_INT);
 
 
 
@@ -101,11 +109,7 @@ void test_fsm_validTransitionNoOutput(void)
 
     fsm_trans_t tt[] = {
 
-        {0, is_true, 1, 
-
-                       ((void *)0)
-
-                           },
+        {0, check_func, 1, do_nothing},
 
         {-1, 
 
@@ -121,7 +125,11 @@ void test_fsm_validTransitionNoOutput(void)
 
 
 
-    is_true_CMockExpectAnyArgsAndReturn(44, 1);
+    check_func_CMockExpectAnyArgsAndReturn(131, 1);
+
+    do_nothing_CMockExpectAnyArgs(132);
+
+
 
 
 
@@ -145,13 +153,13 @@ void test_fsm_validTransitionNoOutput(void)
 
    ((void *)0)
 
-   )) {} else {UnityFail( (((" Expected Non-NULL"))), (UNITY_UINT)((UNITY_UINT)((UNITY_UINT)(54))));}} while(0);
+   )) {} else {UnityFail( (((" Expected Non-NULL"))), (UNITY_UINT)((UNITY_UINT)((UNITY_UINT)(143))));}} while(0);
 
     UnityAssertEqualNumber((UNITY_INT)((1)), (UNITY_INT)((f->current_state)), (
 
    ((void *)0)
 
-   ), (UNITY_UINT)(55), UNITY_DISPLAY_STYLE_INT);
+   ), (UNITY_UINT)(144), UNITY_DISPLAY_STYLE_INT);
 
 
 
@@ -167,7 +175,7 @@ void test_fsm_validTransitionWithOutput(void)
 
     fsm_trans_t tt[] = {
 
-        {0, is_true, 1, do_nothing},
+        {0, check_func, 1, do_nothing},
 
         {-1, 
 
@@ -183,9 +191,9 @@ void test_fsm_validTransitionWithOutput(void)
 
 
 
-    is_true_CMockExpectAnyArgsAndReturn(67, 1);
+    check_func_CMockExpectAnyArgsAndReturn(156, 1);
 
-    do_nothing_CMockExpectAnyArgs(68);
+    do_nothing_CMockExpectAnyArgs(157);
 
 
 
@@ -209,13 +217,13 @@ void test_fsm_validTransitionWithOutput(void)
 
    ((void *)0)
 
-   )) {} else {UnityFail( (((" Expected Non-NULL"))), (UNITY_UINT)((UNITY_UINT)((UNITY_UINT)(78))));}} while(0);
+   )) {} else {UnityFail( (((" Expected Non-NULL"))), (UNITY_UINT)((UNITY_UINT)((UNITY_UINT)(167))));}} while(0);
 
     UnityAssertEqualNumber((UNITY_INT)((1)), (UNITY_INT)((f->current_state)), (
 
    ((void *)0)
 
-   ), (UNITY_UINT)(79), UNITY_DISPLAY_STYLE_INT);
+   ), (UNITY_UINT)(168), UNITY_DISPLAY_STYLE_INT);
 
 
 
@@ -237,7 +245,7 @@ void test_fsm_validTransitionTable(void)
 
     fsm_trans_t tt[] = {
 
-        {0, is_true, 1, do_nothing},
+        {0, check_func, 1, do_nothing},
 
         {-1, 
 
@@ -283,7 +291,7 @@ void test_fsm_validTransitionTable(void)
 
    ((void *)0)
 
-   ), (UNITY_UINT)(101), UNITY_DISPLAY_STYLE_INT);
+   ), (UNITY_UINT)(190), UNITY_DISPLAY_STYLE_INT);
 
 
 
@@ -301,9 +309,9 @@ void test_fsm_validLastTransition(void)
 
     fsm_trans_t tt[] = {
 
-        {0, is_true, 1, do_nothing},
+        {0, check_func, 1, do_nothing},
 
-        {0, is_true, 2, do_nothing},
+        {0, check_func, 2, do_nothing},
 
         {-1, 
 
@@ -337,7 +345,65 @@ void test_fsm_validLastTransition(void)
 
    ((void *)0)
 
-   ), (UNITY_UINT)(122), UNITY_DISPLAY_STYLE_INT);
+   ), (UNITY_UINT)(211), UNITY_DISPLAY_STYLE_INT);
+
+
+
+    fsm_destroy(f);
+
+}
+
+
+
+
+
+
+
+void test_fsm_valid_state(void)
+
+{
+
+    fsm_trans_t tt[] = {
+
+        {0, check_func, 1, do_nothing},
+
+        {0, check_func, 3, do_nothing},
+
+        {0, check_func, 3, do_nothing},
+
+        {-1, 
+
+            ((void *)0)
+
+                , -1, do_nothing},
+
+    };
+
+
+
+
+
+    fsm_t *f = (fsm_t*)1;
+
+
+
+    int size = sizeof(tt)/sizeof(tt[0]);
+
+
+
+    f = fsm_new(tt, size, 3);
+
+
+
+    UnityAssertEqualNumber((UNITY_INT)((
+
+   ((void *)0)
+
+   )), (UNITY_INT)((f)), (
+
+   ((void *)0)
+
+   ), (UNITY_UINT)(234), UNITY_DISPLAY_STYLE_INT);
 
 
 
@@ -355,7 +421,7 @@ void test_fsm_NULL_argument_valid_InOut(void)
 
     fsm_trans_t tt[] = {
 
-        {0, is_true, 1, do_nothing},
+        {0, check_func, 1, do_nothing},
 
         {0, 
 
@@ -399,7 +465,7 @@ void test_fsm_NULL_argument_valid_InOut(void)
 
    ((void *)0)
 
-   )) {} else {UnityFail( (((" Expected Non-NULL"))), (UNITY_UINT)((UNITY_UINT)((UNITY_UINT)(143))));}} while(0);
+   )) {} else {UnityFail( (((" Expected Non-NULL"))), (UNITY_UINT)((UNITY_UINT)((UNITY_UINT)(255))));}} while(0);
 
 
 
@@ -417,9 +483,9 @@ void test_fsm_NULL_IF_WRONG_DATA(void)
 
     fsm_trans_t tt[] = {
 
-        {-1, is_true, 1, do_nothing},
+        {-1, check_func, 1, do_nothing},
 
-        {0, is_true, 2, do_nothing},
+        {0, check_func, 2, do_nothing},
 
         {-1, 
 
@@ -457,7 +523,235 @@ void test_fsm_NULL_IF_WRONG_DATA(void)
 
    ((void *)0)
 
-   ), (UNITY_UINT)(164), UNITY_DISPLAY_STYLE_INT);
+   ), (UNITY_UINT)(276), UNITY_DISPLAY_STYLE_INT);
+
+
+
+    fsm_destroy(f);
+
+}
+
+
+
+
+
+void test_fsm_NULL_IFWRONGDATA_INIT(void)
+
+{
+
+    fsm_trans_t tt[] = {
+
+        {-1, check_func, 1, do_nothing},
+
+        {0, check_func, 2, do_nothing},
+
+        {-1, 
+
+            ((void *)0)
+
+                , -1, 
+
+                      ((void *)0)
+
+                          },
+
+    };
+
+
+
+    fsm_t* f = (fsm_t*) malloc (sizeof (fsm_t));
+
+
+
+    int size = sizeof(tt)/sizeof(tt[0]);
+
+
+
+
+
+
+
+    UnityAssertEqualNumber((UNITY_INT)((
+
+   0
+
+   )), (UNITY_INT)((fsm_init(f,tt,size,2))), (
+
+   ((void *)0)
+
+   ), (UNITY_UINT)(296), UNITY_DISPLAY_STYLE_INT);
+
+
+
+    fsm_destroy(f);
+
+}
+
+
+
+void test_fsm_INPUT_FUNC_VALID_T(void)
+
+{
+
+    fsm_trans_t tt[] = {
+
+        {0, check_func, 1, do_nothing},
+
+        {1, check_func, 2, do_nothing},
+
+        {-1, 
+
+            ((void *)0)
+
+                , -1, 
+
+                      ((void *)0)
+
+                          },
+
+    };
+
+
+
+    check_func_CMockExpectAnyArgsAndReturn(309, 1);
+
+
+
+    fsm_t *f = (fsm_t*)1;
+
+
+
+    int size = sizeof(tt)/sizeof(tt[0]);
+
+
+
+    f = fsm_new(tt, size, 2);
+
+
+
+    UnityAssertEqualNumber((UNITY_INT)((1)), (UNITY_INT)((fsm_fire(f))), (
+
+   ((void *)0)
+
+   ), (UNITY_UINT)(317), UNITY_DISPLAY_STYLE_INT);
+
+
+
+    fsm_destroy(f);
+
+}
+
+
+
+
+
+
+
+void test_fsm_ORIG_STATE_NOT_EQUAL_CURRENT_STATE(void)
+
+{
+
+    fsm_trans_t tt[] = {
+
+        {0, check_func, 1, do_nothing},
+
+        {1, check_func, 2, do_nothing},
+
+        {-1, 
+
+            ((void *)0)
+
+                , -1, 
+
+                      ((void *)0)
+
+                          },
+
+    };
+
+
+
+
+
+    fsm_t *f = (fsm_t*)1;
+
+
+
+    int size = sizeof(tt)/sizeof(tt[0]);
+
+
+
+    f = fsm_new(tt, size, 2);
+
+
+
+    f->current_state = 3;
+
+
+
+    UnityAssertEqualNumber((UNITY_INT)((-1)), (UNITY_INT)((fsm_fire(f))), (
+
+   ((void *)0)
+
+   ), (UNITY_UINT)(341), UNITY_DISPLAY_STYLE_INT);
+
+
+
+    fsm_destroy(f);
+
+}
+
+
+
+
+
+
+
+void test_fsm_VALID_T_NO_INPUT_FUNC(void)
+
+{
+
+    fsm_trans_t tt[] = {
+
+        {0, check_func, 1, do_nothing},
+
+        {1, check_func, 2, do_nothing},
+
+        {-1, 
+
+            ((void *)0)
+
+                , -1, 
+
+                      ((void *)0)
+
+                          },
+
+    };
+
+
+
+    check_func_CMockExpectAnyArgsAndReturn(356, 0);
+
+
+
+    fsm_t *f = (fsm_t*)1;
+
+
+
+    int size = sizeof(tt)/sizeof(tt[0]);
+
+
+
+    f = fsm_new(tt, size, 2);
+
+
+
+    UnityAssertEqualNumber((UNITY_INT)((0)), (UNITY_INT)((fsm_fire(f))), (
+
+   ((void *)0)
+
+   ), (UNITY_UINT)(364), UNITY_DISPLAY_STYLE_INT);
 
 
 

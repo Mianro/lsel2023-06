@@ -18,8 +18,13 @@ extern void test_fsm_validTransitionNoOutput(void);
 extern void test_fsm_validTransitionWithOutput(void);
 extern void test_fsm_validTransitionTable(void);
 extern void test_fsm_validLastTransition(void);
+extern void test_fsm_valid_state(void);
 extern void test_fsm_NULL_argument_valid_InOut(void);
 extern void test_fsm_NULL_IF_WRONG_DATA(void);
+extern void test_fsm_NULL_IFWRONGDATA_INIT(void);
+extern void test_fsm_INPUT_FUNC_VALID_T(void);
+extern void test_fsm_ORIG_STATE_NOT_EQUAL_CURRENT_STATE(void);
+extern void test_fsm_VALID_T_NO_INPUT_FUNC(void);
 
 
 /*=======Mock Management=====*/
@@ -87,14 +92,19 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
 int main(void)
 {
   UnityBegin("test_fsm.c");
-  run_test(test_fsm_new_nullWhenNullTransition, "test_fsm_new_nullWhenNullTransition", 14);
-  run_test(test_fsm_nullWhenEmptyTransition, "test_fsm_nullWhenEmptyTransition", 23);
-  run_test(test_fsm_validTransitionNoOutput, "test_fsm_validTransitionNoOutput", 37);
-  run_test(test_fsm_validTransitionWithOutput, "test_fsm_validTransitionWithOutput", 60);
-  run_test(test_fsm_validTransitionTable, "test_fsm_validTransitionTable", 87);
-  run_test(test_fsm_validLastTransition, "test_fsm_validLastTransition", 107);
-  run_test(test_fsm_NULL_argument_valid_InOut, "test_fsm_NULL_argument_valid_InOut", 128);
-  run_test(test_fsm_NULL_IF_WRONG_DATA, "test_fsm_NULL_IF_WRONG_DATA", 149);
+  run_test(test_fsm_new_nullWhenNullTransition, "test_fsm_new_nullWhenNullTransition", 98);
+  run_test(test_fsm_nullWhenEmptyTransition, "test_fsm_nullWhenEmptyTransition", 110);
+  run_test(test_fsm_validTransitionNoOutput, "test_fsm_validTransitionNoOutput", 124);
+  run_test(test_fsm_validTransitionWithOutput, "test_fsm_validTransitionWithOutput", 149);
+  run_test(test_fsm_validTransitionTable, "test_fsm_validTransitionTable", 176);
+  run_test(test_fsm_validLastTransition, "test_fsm_validLastTransition", 196);
+  run_test(test_fsm_valid_state, "test_fsm_valid_state", 218);
+  run_test(test_fsm_NULL_argument_valid_InOut, "test_fsm_NULL_argument_valid_InOut", 240);
+  run_test(test_fsm_NULL_IF_WRONG_DATA, "test_fsm_NULL_IF_WRONG_DATA", 261);
+  run_test(test_fsm_NULL_IFWRONGDATA_INIT, "test_fsm_NULL_IFWRONGDATA_INIT", 282);
+  run_test(test_fsm_INPUT_FUNC_VALID_T, "test_fsm_INPUT_FUNC_VALID_T", 301);
+  run_test(test_fsm_ORIG_STATE_NOT_EQUAL_CURRENT_STATE, "test_fsm_ORIG_STATE_NOT_EQUAL_CURRENT_STATE", 324);
+  run_test(test_fsm_VALID_T_NO_INPUT_FUNC, "test_fsm_VALID_T_NO_INPUT_FUNC", 348);
 
   CMock_Guts_MemFreeFinal();
   return UnityEnd();

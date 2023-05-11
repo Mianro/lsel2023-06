@@ -1,38 +1,72 @@
 <?xml version='1.0' encoding='utf-8' ?>
 <TestRun>
-	<FailedTests/>
-	<SuccessfulTests>
+	<FailedTests>
 		<Test id="1">
-			<Name>test/test_fsm.c::test_fsm_new_nullWhenNullTransition</Name>
+			<Name>test/test_fsm.c::test_fsm_validTransitionNoOutput</Name>
+			<FailureType>Assertion</FailureType>
+			<Location>
+				<File>test/test_fsm.c</File>
+				<Line>124</Line>
+			</Location>
+			<Message>Function do_nothing.  Called fewer times than expected.</Message>
 		</Test>
 		<Test id="2">
-			<Name>test/test_fsm.c::test_fsm_nullWhenEmptyTransition</Name>
+			<Name>test/test_fsm.c::test_fsm_validTransitionWithOutput</Name>
+			<FailureType>Assertion</FailureType>
+			<Location>
+				<File>test/test_fsm.c</File>
+				<Line>149</Line>
+			</Location>
+			<Message>Function do_nothing.  Called fewer times than expected.</Message>
 		</Test>
 		<Test id="3">
-			<Name>test/test_fsm.c::test_fsm_validTransitionNoOutput</Name>
+			<Name>test/test_fsm.c::test_fsm_VALID_T_NO_INPUT_FUNC</Name>
+			<FailureType>Assertion</FailureType>
+			<Location>
+				<File>test/test_fsm.c</File>
+				<Line>364</Line>
+			</Location>
+			<Message>Expected 0 Was -1</Message>
 		</Test>
+	</FailedTests>
+	<SuccessfulTests>
 		<Test id="4">
-			<Name>test/test_fsm.c::test_fsm_validTransitionWithOutput</Name>
+			<Name>test/test_fsm.c::test_fsm_new_nullWhenNullTransition</Name>
 		</Test>
 		<Test id="5">
-			<Name>test/test_fsm.c::test_fsm_validTransitionTable</Name>
+			<Name>test/test_fsm.c::test_fsm_nullWhenEmptyTransition</Name>
 		</Test>
 		<Test id="6">
-			<Name>test/test_fsm.c::test_fsm_validLastTransition</Name>
+			<Name>test/test_fsm.c::test_fsm_validTransitionTable</Name>
 		</Test>
 		<Test id="7">
-			<Name>test/test_fsm.c::test_fsm_NULL_argument_valid_InOut</Name>
+			<Name>test/test_fsm.c::test_fsm_validLastTransition</Name>
 		</Test>
 		<Test id="8">
+			<Name>test/test_fsm.c::test_fsm_valid_state</Name>
+		</Test>
+		<Test id="9">
+			<Name>test/test_fsm.c::test_fsm_NULL_argument_valid_InOut</Name>
+		</Test>
+		<Test id="10">
 			<Name>test/test_fsm.c::test_fsm_NULL_IF_WRONG_DATA</Name>
+		</Test>
+		<Test id="11">
+			<Name>test/test_fsm.c::test_fsm_NULL_IFWRONGDATA_INIT</Name>
+		</Test>
+		<Test id="12">
+			<Name>test/test_fsm.c::test_fsm_INPUT_FUNC_VALID_T</Name>
+		</Test>
+		<Test id="13">
+			<Name>test/test_fsm.c::test_fsm_ORIG_STATE_NOT_EQUAL_CURRENT_STATE</Name>
 		</Test>
 	</SuccessfulTests>
 	<IgnoredTests/>
 	<Statistics>
-		<Tests>8</Tests>
+		<Tests>13</Tests>
 		<Ignores>0</Ignores>
-		<FailuresTotal>0</FailuresTotal>
+		<FailuresTotal>3</FailuresTotal>
 		<Errors>0</Errors>
-		<Failures>0</Failures>
+		<Failures>3</Failures>
 	</Statistics>
 </TestRun>
