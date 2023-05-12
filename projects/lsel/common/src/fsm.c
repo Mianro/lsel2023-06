@@ -34,11 +34,11 @@ fsm_new (fsm_trans_t* tt, int size, int max_state)
 
 bool
 fsm_init (fsm_t* f, fsm_trans_t* tt, int size, int max_state)
-{
-        if (!f || !tt) {
+{       // Validacion de F y TT
+        if (f == NULL || tt==NULL) {
           return false;
         }
-
+        // Validacion de las tablas de transicion
         if (!fsm_valid_tt(tt,size,max_state)){
           return false;
         }
@@ -64,19 +64,36 @@ int
 fsm_fire (fsm_t* f)
 {
   fsm_trans_t* t;
+  int valid_state = 0; 
+  int guard_function = 0; 
 
-  for (t = f->tt; t->orig_state >= 0; ++t) {
-    if ((f->current_state == t->orig_state) && t->in(f)) {
+  for (t=f->tt; t->orig_state >= 0; ++t) {
+
+    if(t->in!= NULL){
+    guard_function = t->in(f);
+    }else{
+    guard_function = 1;
+    }
+
+    if ((f->current_state == t->orig_state) && guard_function) {
       f->current_state = t->dest_state;
-      return 1; 
       if (t->out)
-        t->out(f);
+      t->out(f);
+      return 1; 
       break;
-    }else if(f->current_state != t->orig_state){
-      return -1; 
+    }
+    
+    if(f->current_state != t->orig_state){
+      valid_state = -1; 
+    }else{
+      valid_state = 0; 
+      break; 
     }
   }
 
+  if(valid_state == -1){
+    return -1; 
+  }
   return 0; 
 }
 
@@ -95,14 +112,14 @@ fsm_valid_tt(fsm_trans_t* tt, int size, int max_state)
     return NULL;
    } 
    }
-
+ // Funcion retorna NULL si algun estado no es natural o mayor al maximo estado
   for(int i = 0 ; i < (size-2); i++){
     if(tt[i].dest_state < 0 || tt[i].orig_state >= max_state || tt[i].dest_state >= max_state || tt[i].orig_state < 0){ 
       return NULL; 
     }
   }
 
-
+// Funcion retorna NULL si el ultimo estado no tiene el formato adecuado
   if(!(tt[size-1].dest_state == -1 && tt[size-1].orig_state == -1 && tt[size-1].in == NULL && tt[size-1].out == NULL)){
     return NULL;
   }
