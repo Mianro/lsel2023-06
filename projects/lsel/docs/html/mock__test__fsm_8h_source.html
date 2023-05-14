@@ -111,24 +111,24 @@ $(document).ready(function(){initNavTree('mock__test__fsm_8h_source.html',''); i
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#define is_true_IgnoreAndReturn(cmock_retval) is_true_CMockIgnoreAndReturn(__LINE__, cmock_retval)</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keywordtype">void</span> is_true_CMockIgnoreAndReturn(UNITY_LINE_TYPE cmock_line, <span class="keywordtype">int</span> cmock_to_return);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#define is_true_StopIgnore() is_true_CMockStopIgnore()</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keywordtype">void</span> is_true_CMockStopIgnore(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#define is_true_ExpectAnyArgsAndReturn(cmock_retval) is_true_CMockExpectAnyArgsAndReturn(__LINE__, cmock_retval)</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keywordtype">void</span> is_true_CMockExpectAnyArgsAndReturn(UNITY_LINE_TYPE cmock_line, <span class="keywordtype">int</span> cmock_to_return);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#define is_true_ExpectAndReturn(f, cmock_retval) is_true_CMockExpectAndReturn(__LINE__, f, cmock_retval)</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keywordtype">void</span> is_true_CMockExpectAndReturn(UNITY_LINE_TYPE cmock_line, <a class="code" href="structfsm__t.html">fsm_t</a>* f, <span class="keywordtype">int</span> cmock_to_return);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">typedef</span> int (* CMOCK_is_true_CALLBACK)(<a class="code" href="structfsm__t.html">fsm_t</a>* f, <span class="keywordtype">int</span> cmock_num_calls);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keywordtype">void</span> is_true_AddCallback(CMOCK_is_true_CALLBACK Callback);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keywordtype">void</span> is_true_Stub(CMOCK_is_true_CALLBACK Callback);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#define is_true_StubWithCallback is_true_Stub</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#define is_true_ReturnThruPtr_f(f) is_true_CMockReturnMemThruPtr_f(__LINE__, f, sizeof(fsm_t))</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#define is_true_ReturnArrayThruPtr_f(f, cmock_len) is_true_CMockReturnMemThruPtr_f(__LINE__, f, cmock_len * sizeof(*f))</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#define is_true_ReturnMemThruPtr_f(f, cmock_size) is_true_CMockReturnMemThruPtr_f(__LINE__, f, cmock_size)</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keywordtype">void</span> is_true_CMockReturnMemThruPtr_f(UNITY_LINE_TYPE cmock_line, <a class="code" href="structfsm__t.html">fsm_t</a>* f, <span class="keywordtype">size_t</span> cmock_size);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#define is_true_IgnoreArg_f() is_true_CMockIgnoreArg_f(__LINE__)</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keywordtype">void</span> is_true_CMockIgnoreArg_f(UNITY_LINE_TYPE cmock_line);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#define check_func_IgnoreAndReturn(cmock_retval) check_func_CMockIgnoreAndReturn(__LINE__, cmock_retval)</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keywordtype">void</span> check_func_CMockIgnoreAndReturn(UNITY_LINE_TYPE cmock_line, <span class="keywordtype">int</span> cmock_to_return);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#define check_func_StopIgnore() check_func_CMockStopIgnore()</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keywordtype">void</span> check_func_CMockStopIgnore(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#define check_func_ExpectAnyArgsAndReturn(cmock_retval) check_func_CMockExpectAnyArgsAndReturn(__LINE__, cmock_retval)</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keywordtype">void</span> check_func_CMockExpectAnyArgsAndReturn(UNITY_LINE_TYPE cmock_line, <span class="keywordtype">int</span> cmock_to_return);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#define check_func_ExpectAndReturn(f, cmock_retval) check_func_CMockExpectAndReturn(__LINE__, f, cmock_retval)</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keywordtype">void</span> check_func_CMockExpectAndReturn(UNITY_LINE_TYPE cmock_line, <a class="code" href="structfsm__t.html">fsm_t</a>* f, <span class="keywordtype">int</span> cmock_to_return);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">typedef</span> int (* CMOCK_check_func_CALLBACK)(<a class="code" href="structfsm__t.html">fsm_t</a>* f, <span class="keywordtype">int</span> cmock_num_calls);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keywordtype">void</span> check_func_AddCallback(CMOCK_check_func_CALLBACK Callback);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keywordtype">void</span> check_func_Stub(CMOCK_check_func_CALLBACK Callback);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#define check_func_StubWithCallback check_func_Stub</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#define check_func_ReturnThruPtr_f(f) check_func_CMockReturnMemThruPtr_f(__LINE__, f, sizeof(fsm_t))</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#define check_func_ReturnArrayThruPtr_f(f, cmock_len) check_func_CMockReturnMemThruPtr_f(__LINE__, f, cmock_len * sizeof(*f))</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#define check_func_ReturnMemThruPtr_f(f, cmock_size) check_func_CMockReturnMemThruPtr_f(__LINE__, f, cmock_size)</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keywordtype">void</span> check_func_CMockReturnMemThruPtr_f(UNITY_LINE_TYPE cmock_line, <a class="code" href="structfsm__t.html">fsm_t</a>* f, <span class="keywordtype">size_t</span> cmock_size);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#define check_func_IgnoreArg_f() check_func_CMockIgnoreArg_f(__LINE__)</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keywordtype">void</span> check_func_CMockIgnoreArg_f(UNITY_LINE_TYPE cmock_line);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#define do_nothing_Ignore() do_nothing_CMockIgnore()</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keywordtype">void</span> do_nothing_CMockIgnore(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#define do_nothing_StopIgnore() do_nothing_CMockStopIgnore()</span></div>
@@ -157,7 +157,7 @@ $(document).ready(function(){initNavTree('mock__test__fsm_8h_source.html',''); i
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="astructfsm__t_html"><div class="ttname"><a href="structfsm__t.html">fsm_t</a></div><div class="ttdef"><b>Definition:</b> fsm.h:16</div></div>
+<div class="ttc" id="astructfsm__t_html"><div class="ttname"><a href="structfsm__t.html">fsm_t</a></div><div class="ttdef"><b>Definition:</b> fsm.h:18</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
