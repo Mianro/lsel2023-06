@@ -1,0 +1,18 @@
+name: Unit Tests
+on:
+  push:
+    branches:
+     - 'master'
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest    
+    
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+      
+    - name: Run Unit Tests
+      uses: sjscymru/action-ceedling-unit-test@v1.0
+      with:
+        unit-test-path: 'projects/lsel/ceedling'
