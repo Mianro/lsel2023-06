@@ -1,18 +1,17 @@
-name: Unit Tests
+name: Test
 on:
-  push:
-    branches:
-     - 'master'
-  
+  workflow_dispatch:
+
 jobs:
   build:
-    runs-on: ubuntu-latest    
-    
+    runs-on: ubuntu-latest
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v3
-      
-    - name: Run Unit Tests
-      uses: sjscymru/action-ceedling-unit-test@v1.0
-      with:
-        unit-test-path: 'projects/lsel/ceedling'
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: Run tests
+        uses: batov/ceedling_action@master
+      - name: Publish Unit Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v1
+        if: always()
+        with:
+            files: build/artifacts/test/report.xml
