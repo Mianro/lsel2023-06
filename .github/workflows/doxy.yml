@@ -15,6 +15,12 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y doxygen
+        
+      - name: Obtener Doxyfile del branch
+        uses: actions/checkout@v2
+        with:
+          ref: <jf>
+          path: doxygen
 
       - name: Generar documentación
         run: doxygen Doxyfile
