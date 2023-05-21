@@ -13,6 +13,6 @@ jobs:
 
       - name: Ejecutar pruebas con Ceedling
         run: |
-          cd path/to/project
+          cd projects/lsel/ceedling
           bundle install
           bundle exec ceedling test:all
