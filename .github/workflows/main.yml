@@ -15,9 +15,9 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.7
-
+      
       - name: Install Ceedling
-        uses: ceedling/install-action@v2
+        run: gem install ceedling
 
       - name: Ejecutar pruebas con Ceedling
         run: |
