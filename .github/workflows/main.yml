@@ -10,6 +10,14 @@ jobs:
     steps:
       - name: Checkout del repositorio
         uses: actions/checkout@v2
+              
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7
+
+      - name: Install Ceedling
+        uses: ceedling/install-action@v2
 
       - name: Ejecutar pruebas con Ceedling
         run: |
