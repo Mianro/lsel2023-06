@@ -25,13 +25,13 @@ jobs:
       - name: Generar documentación
         run: doxygen projects/lsel/Doxyfile
 
-      - name: Generar cobertura con GCOVR
+      - name: Ejecutar pruebas y generar cobertura
         run: |
-          gcovr -r . --html-details --output=coverage.html
-
-      - name: Copiar resultados al fichero HTML
-        run: |
-          cp coverage.html docs/html
+          ceedling test:all
+          ceedling gcov:all utils:gcov
+          
+      - name: Copiar resultados al directorio de la documentación
+        run: cp -R build/gcov/html/* docs/html/
 
       - name: Desplegar en gh-pages
         uses: peaceiris/actions-gh-pages@v3
