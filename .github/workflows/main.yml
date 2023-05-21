@@ -25,3 +25,10 @@ jobs:
         run: |
           cd projects/lsel/ceedling
           ceedling test:all
+          
+      - name: Añadir badge
+        uses: badges/shields@v3
+        with:
+          name: Estado de las pruebas
+          message: ${{ steps.ceedling.outcome }}
+          color: ${{ if eq(steps.ceedling.outcome, 'success') }}brightgreen{{ else }}red{{ endif }}
