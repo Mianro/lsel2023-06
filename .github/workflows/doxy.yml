@@ -34,15 +34,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs/html
-
-      - name: Añadir badge
-        uses: schneegans/dynamic-badges-action@v1.6.0
-        with:
-          auth: ${{ secrets.GIST_SECRET }} # Variable en SECRETS
-          gistID: <gist-ID>
-          filename: api-badge.json
-          label: Estado de la documentación
-          message: Pasa
-          valColorRange: 1
-          maxColorRange: 1
-          minColorRange: 0
