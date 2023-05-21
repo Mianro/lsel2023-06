@@ -23,7 +23,7 @@ jobs:
           path: docs/Doxyfile 
 
       - name: Generar documentación
-        run: doxygen Doxyfile
+        run: doxygen projects/lsel/Doxyfile
 
       - name: Desplegar en gh-pages
         uses: peaceiris/actions-gh-pages@v3
