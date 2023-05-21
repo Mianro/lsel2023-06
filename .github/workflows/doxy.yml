@@ -19,7 +19,7 @@ jobs:
       - name: Obtener Doxyfile del branch
         uses: actions/checkout@v2
         with:
-          ref: <jf>
+          ref: jf
           path: doxygen
 
       - name: Generar documentación
