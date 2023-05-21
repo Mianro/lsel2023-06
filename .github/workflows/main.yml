@@ -26,6 +26,15 @@ jobs:
           cd projects/lsel/ceedling
           ceedling test:all
           
+          - name: Añadir badge
+            run: |
+             docker run \
+               --rm \
+               -v ${{ github.workspace }}:/workspace \
+               badges/shields \
+               shields.io/endpoint.svg?url=https%3A%2F%2Fraw.githubusercontent.com%2F${{ github.repository }}%2Fmain%2Fpath%2Fto%2Fbadge.json
+
+          
       - name: Añadir badge
         uses: badges/gh-actions-badge@v1
         with:
