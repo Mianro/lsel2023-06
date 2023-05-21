@@ -30,6 +30,7 @@ jobs:
 
       - name: Ejecutar pruebas y generar cobertura
         run: |
+          cd projects/lsel/ceedling
           ceedling test:all
           ceedling gcov:all utils:gcov
           
