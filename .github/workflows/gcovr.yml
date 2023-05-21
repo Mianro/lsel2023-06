@@ -28,11 +28,10 @@ jobs:
       - name: Generar documentación
         run: doxygen projects/lsel/Doxyfile
 
-      - name: Ejecutar pruebas y generar cobertura
+      - name: Ejecutar pruebas con Ceedling
         run: |
           cd projects/lsel/ceedling
           ceedling test:all
-          ceedling gcov:all utils:gcov
           
       - name: Copiar resultados al directorio de la documentación
         run: cp -R build/gcov/html/* docs/html/
