@@ -1,0 +1,38 @@
+name: Despliegue del API de Doxygen
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v2
+
+      - name: Configurar entorno de Doxygen
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y doxygen
+
+      - name: Generar documentación
+        run: doxygen Doxyfile
+
+      - name: Desplegar en gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs/html
+
+      - name: Añadir badge
+        uses: schneegans/dynamic-badges-action@v1.6.0
+        with:
+          auth: ${{ secrets.GIST_SECRET }} # Variable en SECRETS
+          gistID: <gist-ID>
+          filename: api-badge.json
+          label: Estado de la documentación
+          message: Pasa
+          valColorRange: 1
+          maxColorRange: 1
+          minColorRange: 0
