@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: jf
-          path: doxygen
+          path: docs/Doxyfile 
 
       - name: Generar documentación
         run: doxygen Doxyfile
