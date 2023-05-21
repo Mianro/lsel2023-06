@@ -1,17 +1,24 @@
-name: Test
-on:
-  workflow_dispatch:
+name: Ejecución de pruebas con Ceedling
+
+on: [workflow_dispatch]
 
 jobs:
-  build:
+  tests:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repo
+      - name: Checkout del repositorio
         uses: actions/checkout@v2
-      - name: Run tests
-        uses: batov/ceedling_action@master
-      - name: Publish Unit Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v1
-        if: always()
+
+      - name: Ejecutar pruebas con Ceedling
+        run: |
+          cd projects/lsel/ceedling
+          bundle install
+          bundle exec ceedling test:all
+
+      - name: Añadir badge
+        uses: badges/shields@v3
         with:
-            files: projects/lsel/ceedling/build/artifacts/test
+          name: Estado de las pruebas
+          message: ${{ job.status }}
+          color: ${{ job.status == 'success' ? 'brightgreen' : 'red' }}
