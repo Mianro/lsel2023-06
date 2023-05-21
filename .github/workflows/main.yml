@@ -10,6 +10,8 @@ jobs:
     steps:
       - name: Checkout del repositorio
         uses: actions/checkout@v2
+        with:
+          ref: jf
               
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
