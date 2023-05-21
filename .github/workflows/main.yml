@@ -1,6 +1,7 @@
 name: Ejecución de pruebas con Ceedling
 
-on: [workflow_dispatch]
+on:
+  workflow_dispatch:
 
 jobs:
   tests:
@@ -12,13 +13,6 @@ jobs:
 
       - name: Ejecutar pruebas con Ceedling
         run: |
-          cd projects/lsel/ceedling
+          cd path/to/project
           bundle install
           bundle exec ceedling test:all
-
-      - name: Añadir badge
-        uses: badges/shields@v3
-        with:
-          name: Estado de las pruebas
-          message: ${{ job.status }}
-          color: ${{ job.status == 'success' ? 'brightgreen' : 'red' }}
