@@ -1,0 +1,44 @@
+name: Despliegue del API de Doxygen y GCOVR
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v2
+        with: 
+          ref: jf
+
+      - name: Configurar entorno de Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+
+      - name: Instalar Doxygen y GCOVR
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y doxygen
+          pip install gcovr
+
+      - name: Generar documentación
+        run: doxygen projects/lsel/Doxyfile
+
+      - name: Generar cobertura con GCOVR
+        run: |
+          gcovr -r . --html-details --output=coverage.html
+
+      - name: Copiar resultados al fichero HTML
+        run: |
+          cp coverage.html docs/html
+
+      - name: Desplegar en gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: projects/lsel/docs/html
+
+ 
+
+
