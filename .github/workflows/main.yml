@@ -29,6 +29,6 @@ jobs:
       - name: Añadir badge
         uses: badges/shields@v3
         with:
-          name: Estado de las pruebas
-          message: ${{ steps.ceedling.outcome }}
-          color: ${{ if eq(steps.ceedling.outcome, 'success') }}brightgreen{{ else }}red{{ endif }}
+            name: Estado de las pruebas
+            message: ${{ steps.ceedling.outcome }}
+            color: ${{ steps.ceedling.outcome == 'success' && 'brightgreen' || 'red' }}
