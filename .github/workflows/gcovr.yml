@@ -17,7 +17,7 @@ jobs:
           python-version: 3.x
           
       - name: Instalar Ceedling
-        run: gem install ceedling
+        run: gem install ceedling --user-install
 
       - name: Instalar Doxygen y GCOVR
         run: |
