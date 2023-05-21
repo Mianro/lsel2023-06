@@ -27,8 +27,9 @@ jobs:
           ceedling test:all
           
       - name: Añadir badge
-        uses: badges/shields@v3
+        uses: chrnorm/shields-badge-action@v1
         with:
-            name: Estado de las pruebas
-            message: ${{ steps.ceedling.outcome }}
-            color: ${{ steps.ceedling.outcome == 'success' && 'brightgreen' || 'red' }}
+          label: Estado de las pruebas
+          message: ${{ steps.ceedling.outcome }}
+          color: ${{ steps.ceedling.outcome == 'success' && 'brightgreen' || 'red' }}
+
