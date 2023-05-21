@@ -38,15 +38,13 @@ jobs:
         run: |
           cd projects/lsel/ceedling
           ceedling test:all
-          
-      - name: Copiar resultados al directorio de la documentación
-        run: cp -R build/gcov/html/* docs/html/
+          ceedling gcov:all utils:gcov
 
       - name: Desplegar en gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: projects/lsel/docs/html
+          publish_dir: projects/lsel/ceedling/build/artifacts/gcov
 
  
 
