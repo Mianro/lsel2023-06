@@ -14,6 +14,8 @@ jobs:
     steps:
       - name: Checkout del repositorio
         uses: actions/checkout@v2
+        with:
+          ref: jf
 
       - name: Configurar entorno de Doxygen
         run: |
