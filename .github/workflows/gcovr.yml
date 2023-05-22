@@ -43,7 +43,7 @@ jobs:
           cd projects/lsel/ceedling
           ceedling test:all
           ceedling gcov:all utils:gcov
-          cp -r build/artifacts/gcov docs/gcov
+          cp -r build/artifacts/gcov ../docs
           echo "<a href="html/index.html">Doxygen</a></br><a href="gcov/GcovCoverageResults.html">GCOV</a>" > docs/index.html
 
       - name: Desplegar en gh-pages
