@@ -10,5 +10,6 @@ Utilizamos:
 
 [![Ejecución de pruebas con Ceedling](https://github.com/Mianro/lsel2023-06/actions/workflows/ceedling.yml/badge.svg)](https://github.com/Mianro/lsel2023-06/actions/workflows/ceedling.yml)
 
-
 [![Despliegue del API de Doxygen](https://github.com/Mianro/lsel2023-06/actions/workflows/doxy.yml/badge.svg)](https://github.com/Mianro/lsel2023-06/actions/workflows/doxy.yml)
+
+[![Despliegue del API de Doxygen y GCOVR](https://github.com/Mianro/lsel2023-06/actions/workflows/gcovr.yml/badge.svg)](https://github.com/Mianro/lsel2023-06/actions/workflows/gcovr.yml)
