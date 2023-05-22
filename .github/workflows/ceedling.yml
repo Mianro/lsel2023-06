@@ -26,8 +26,9 @@ jobs:
           cd projects/lsel/ceedling
           ceedling test:all
         
-      - name: Añadir badge de estado de pruebas
+      - name: Añadir badge de cobertura
         run: |
-          echo "[![Estado de las pruebas](https://img.shields.io/badge/Estado-de%20las%20pruebas-brightgreen)](URL_DEL_ESTADO_DE_LAS_PRUEBAS)" >> README.md
-
+          COVERAGE=${{ steps.coverage.outputs.coverage }}
+          BADGE="[![Cobertura de pruebas]https://img.shields.io/badge/Cobertura-${{ COVERAGE }}%25-brightgreen)](URL_DE_LA_PÁGINA_DE_COBERTURA)"
+          echo "${BADGE}" >> README.md
 
