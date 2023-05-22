@@ -26,9 +26,15 @@ jobs:
           cd projects/lsel/ceedling
           ceedling test:all
         
+      - name: Obtener el porcentaje de cobertura
+        id: coverage
+        run: |
+          COVERAGE=$(gcovr -r . --xml | grep linecoverage | sed -E 's/.*linecoverage="([0-9.]+)".*/\1/')
+          echo "::set-output name=coverage::$COVERAGE"
+
       - name: Añadir badge de cobertura
         run: |
           COVERAGE=${{ steps.coverage.outputs.coverage }}
-          BADGE="[![Cobertura de pruebas]https://img.shields.io/badge/Cobertura-${{ COVERAGE }}%25-brightgreen)](URL_DE_LA_PÁGINA_DE_COBERTURA)"
+          BADGE="[![Cobertura de pruebas](https://img.shields.io/badge/Cobertura-${{ COVERAGE }}%25-brightgreen)](URL_DE_LA_PÁGINA_DE_COBERTURA)"
           echo "${BADGE}" >> README.md
 
