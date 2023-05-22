@@ -44,45 +44,49 @@ void tearDown(void)
  *     - Número de transiciones (la última es la inválida)
  *     - Estado máximo
  * nt_6 Devuelve dirección de la memoria que contiene lo necesario para poder utilizarla
-FSM FIRE
+ * FSM FIRE
  * nt_7 Hay una función para realizar la comprobación de la transición
  * nt_8 El estado inicial es el estado de origen de la primera transición
  * nt_9 Solo se comprueban las funciones de guarda de las transiciones con estado de origen igual al de la máquina
-         de estados
- *
- * 
+ *      de estados
+ */
+
+ /**
  * Especificaciones que se pueden traducir a tests
- FMS_NEW
- ** t_1  La transición inválida final es {-1, NULL, -1, NULL}
- ** t_2  Cualquier otra transición debe tener un estado válido de
+ * FMS_NEW
+ * t_1  La transición inválida final es {-1, NULL, -1, NULL}
+ * t_2  Cualquier otra transición debe tener un estado válido de
  *       entrada y de salida
- ** t_3  Las funciones de guarda y actualización pueden ser NULL
+ * t_3  Las funciones de guarda y actualización pueden ser NULL
  * t_4   Puede haber varias máquinas de estados simultáneamente sin que
  *       afecte una a otra si no tienen conexión externa
- ** t_5  Si falla en la reserva, devuelve NULL
- FSM_INIT
- ** t_6  Si falla o hay datos erróneos, devuelve false
- ** La comprobación de errores consiste en:
- ** t_7  La memoria pasada no es NULL (para la estática)
- ** t_8  La tabla de transiciones no es NULL
- ** t_9  Todas las transiciones son válidas salvo la última
- ** t_10 La última transición es la inválida
- ** t_11 Todos los estados son naturales e inferiores al estado máximo (no iguales)
- FSM_FIRE
- ** t_12 Si para una transición a comprobar tiene una función de guarda NULL, se cumple siempre.
- ** t_13 Si para una transición a comprobar tiene una función de guarda, se ejecuta la función y si devuelve 
+ * t_5  Si falla en la reserva, devuelve NULL
+ * FSM_INIT
+ * t_6  Si falla o hay datos erróneos, devuelve false
+ * La comprobación de errores consiste en:
+ * t_7  La memoria pasada no es NULL (para la estática)
+ * t_8  La tabla de transiciones no es NULL
+ * t_9  Todas las transiciones son válidas salvo la última
+ * t_10 La última transición es la inválida
+ * t_11 Todos los estados son naturales e inferiores al estado máximo (no iguales)
+ * FSM_FIRE
+ * t_12 Si para una transición a comprobar tiene una función de guarda NULL, se cumple siempre.
+ * t_13 Si para una transición a comprobar tiene una función de guarda, se ejecuta la función y si devuelve 
  *      distinto de 0, se cumple.
- ** t_14 Si se cumple, se cambia el estado actual al de destino, no se comprueban 
+ * t_14 Si se cumple, se cambia el estado actual al de destino, no se comprueban 
  *      más transiciones y se ejecuta la función de actualización, si es distinto de NULL y devuelve 1.
- ** t_15 Si ninguna transición tiene un estado de origen coincidente con el estado actual, la función de
-        comprobación de transiciones devuelve -1. 
- ** t_16 Si hay transiciones pero no se cumplen las condiciones,devuelve 0.
+ * t_15 Si ninguna transición tiene un estado de origen coincidente con el estado actual, la función de
+ *       comprobación de transiciones devuelve -1. 
+ * t_16 Si hay transiciones pero no se cumplen las condiciones,devuelve 0.
  */
 
 
 
 
-//t_1 La última transición es la inválida -fsm_new
+/**
+ * t_1 La última transición es la inválida -fsm_new
+ * /
+ 
 void test_fsm_validLastTransition(void)
 {
     fsm_trans_t tt[] = {
@@ -103,7 +107,10 @@ void test_fsm_validLastTransition(void)
     fsm_destroy(f);
 }
 
-// t_2  Cualquier otra transición debe tener un estado válido de entrada y de salida -fsm_new
+/** 
+ * t_2  Cualquier otra transición debe tener un estado válido de entrada y de salida -fsm_new
+ * /
+ 
 void test_fsm_valid_state(void)
 {
     fsm_trans_t tt[] = {
