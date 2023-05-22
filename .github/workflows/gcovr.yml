@@ -45,7 +45,7 @@ jobs:
           ceedling gcov:all utils:gcov
           mkdir -p projects/lsel/docs
           cp -r build/artifacts/gcov projects/lsel/docs
-          echo "<a href="html/index.html">Doxygen</a></br><a href="gcov/GcovCoverageResults.html">GCOV</a>" > docs/index.html
+          echo "<a href="html/index.html">Doxygen</a></br><a href="gcov/GcovCoverageResults.html">GCOV</a>" > index.html
 
       - name: Desplegar en gh-pages
         uses: peaceiris/actions-gh-pages@v3
