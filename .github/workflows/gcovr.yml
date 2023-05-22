@@ -43,12 +43,14 @@ jobs:
           cd projects/lsel/ceedling
           ceedling test:all
           ceedling gcov:all utils:gcov
+          cp -r build/artifacts/gcov docs/gcov
+          echo "<a href="html/index.html">Doxygen</a></br><a href="gcov/GcovCoverageResults.html">GCOV</a>" > docs/index.html
 
       - name: Desplegar en gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: projects/lsel/ceedling/build/artifacts/gcov
+          publish_dir: projects/lsel/docs
 
  
 
