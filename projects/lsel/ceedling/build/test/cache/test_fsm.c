@@ -65,13 +65,19 @@ void test_fsm_validLastTransition(void)
 
    ((void *)0)
 
-   ), (UNITY_UINT)(101), UNITY_DISPLAY_STYLE_INT);
+   ), (UNITY_UINT)(133), UNITY_DISPLAY_STYLE_INT);
 
 
 
     fsm_destroy(f);
 
 }
+
+
+
+
+
+
 
 
 
@@ -119,13 +125,19 @@ void test_fsm_valid_state(void)
 
    ((void *)0)
 
-   ), (UNITY_UINT)(122), UNITY_DISPLAY_STYLE_INT);
+   ), (UNITY_UINT)(157), UNITY_DISPLAY_STYLE_INT);
 
 
 
     fsm_destroy(f);
 
 }
+
+
+
+
+
+
 
 
 
@@ -183,13 +195,19 @@ void test_fsm_NULL_argument_valid_InOut(void)
 
    ((void *)0)
 
-   )) {} else {UnityFail( (((" Expected Non-NULL"))), (UNITY_UINT)((UNITY_UINT)((UNITY_UINT)(144))));}} while(0);
+   )) {} else {UnityFail( (((" Expected Non-NULL"))), (UNITY_UINT)((UNITY_UINT)((UNITY_UINT)(182))));}} while(0);
 
 
 
     fsm_destroy(f);
 
 }
+
+
+
+
+
+
 
 
 
@@ -239,9 +257,9 @@ void test_fsm_FMS_NEW_INDEPENDENT_FSM(void)
 
 
 
-    check_func_CMockExpectAnyArgsAndReturn(164, 1);
+    check_func_CMockExpectAnyArgsAndReturn(205, 1);
 
-    do_nothing_CMockExpectAnyArgs(165);
+    do_nothing_CMockExpectAnyArgs(206);
 
 
 
@@ -271,13 +289,13 @@ void test_fsm_FMS_NEW_INDEPENDENT_FSM(void)
 
    ((void *)0)
 
-   ), (UNITY_UINT)(178), UNITY_DISPLAY_STYLE_INT);
+   ), (UNITY_UINT)(219), UNITY_DISPLAY_STYLE_INT);
 
     UnityAssertEqualNumber((UNITY_INT)((0)), (UNITY_INT)((f2->current_state)), (
 
    ((void *)0)
 
-   ), (UNITY_UINT)(179), UNITY_DISPLAY_STYLE_INT);
+   ), (UNITY_UINT)(220), UNITY_DISPLAY_STYLE_INT);
 
 
 
@@ -286,6 +304,10 @@ void test_fsm_FMS_NEW_INDEPENDENT_FSM(void)
     fsm_destroy(f2);
 
 }
+
+
+
+
 
 
 
@@ -337,13 +359,17 @@ void test_fsm_NULL_IF_WRONG_DATA(void)
 
    ((void *)0)
 
-   ), (UNITY_UINT)(201), UNITY_DISPLAY_STYLE_INT);
+   ), (UNITY_UINT)(244), UNITY_DISPLAY_STYLE_INT);
 
 
 
     fsm_destroy(f);
 
 }
+
+
+
+
 
 
 
@@ -393,13 +419,19 @@ void test_fsm_NULL_IFWRONGDATA_INIT(void)
 
    ((void *)0)
 
-   ), (UNITY_UINT)(221), UNITY_DISPLAY_STYLE_INT);
+   ), (UNITY_UINT)(266), UNITY_DISPLAY_STYLE_INT);
 
 
 
     fsm_destroy(f);
 
 }
+
+
+
+
+
+
 
 
 
@@ -441,11 +473,17 @@ void test_fsm__INIT_F_NOT_NULL(void)
 
    ((void *)0)
 
-   ), (UNITY_UINT)(235), UNITY_DISPLAY_STYLE_INT);
+   ), (UNITY_UINT)(283), UNITY_DISPLAY_STYLE_INT);
 
 
 
 }
+
+
+
+
+
+
 
 
 
@@ -493,11 +531,17 @@ void test_fsm_INIT_TT_NOT_NULL(void)
 
    ((void *)0)
 
-   ), (UNITY_UINT)(251), UNITY_DISPLAY_STYLE_INT);
+   ), (UNITY_UINT)(302), UNITY_DISPLAY_STYLE_INT);
 
 
 
 }
+
+
+
+
+
+
 
 
 
@@ -541,11 +585,17 @@ void test_fsm_INIT_TT_IS_VALID_NULL(void)
 
    ((void *)0)
 
-   ), (UNITY_UINT)(267), UNITY_DISPLAY_STYLE_INT);
+   ), (UNITY_UINT)(321), UNITY_DISPLAY_STYLE_INT);
 
 
 
 }
+
+
+
+
+
+
 
 
 
@@ -589,11 +639,15 @@ void test_fsm_INIT_LAST_TT_IS_INVALID(void)
 
    ((void *)0)
 
-   ), (UNITY_UINT)(283), UNITY_DISPLAY_STYLE_INT);
+   ), (UNITY_UINT)(340), UNITY_DISPLAY_STYLE_INT);
 
 
 
 }
+
+
+
+
 
 
 
@@ -637,11 +691,15 @@ void test_fsm_INIT_VALID_STATES(void)
 
    ((void *)0)
 
-   ), (UNITY_UINT)(299), UNITY_DISPLAY_STYLE_INT);
+   ), (UNITY_UINT)(358), UNITY_DISPLAY_STYLE_INT);
 
 
 
 }
+
+
+
+
 
 
 
@@ -677,7 +735,7 @@ void test_fsm_FIRE_IN_NULL(void)
 
 
 
-    do_nothing_CMockExpectAnyArgs(313);
+    do_nothing_CMockExpectAnyArgs(374);
 
 
 
@@ -701,7 +759,7 @@ void test_fsm_FIRE_IN_NULL(void)
 
    ((void *)0)
 
-   ), (UNITY_UINT)(323), UNITY_DISPLAY_STYLE_INT);
+   ), (UNITY_UINT)(384), UNITY_DISPLAY_STYLE_INT);
 
 
 
@@ -710,6 +768,10 @@ void test_fsm_FIRE_IN_NULL(void)
 
 
 }
+
+
+
+
 
 
 
@@ -743,9 +805,9 @@ void test_fsm_FIRE_IN_VALID(void)
 
 
 
-    check_func_CMockExpectAnyArgsAndReturn(340, 1);
+    check_func_CMockExpectAnyArgsAndReturn(403, 1);
 
-    do_nothing_CMockExpectAnyArgs(341);
+    do_nothing_CMockExpectAnyArgs(404);
 
 
 
@@ -769,15 +831,15 @@ void test_fsm_FIRE_IN_VALID(void)
 
    ((void *)0)
 
-   ), (UNITY_UINT)(351), UNITY_DISPLAY_STYLE_INT);
+   ), (UNITY_UINT)(414), UNITY_DISPLAY_STYLE_INT);
 
 
 
     fsm_destroy(f);
 
-
-
 }
+
+
 
 
 
@@ -809,9 +871,9 @@ void test_fsm_FIRE_VALID_T(void)
 
 
 
-    check_func_CMockExpectAnyArgsAndReturn(367, 1);
+    check_func_CMockExpectAnyArgsAndReturn(430, 1);
 
-    do_nothing_CMockExpectAnyArgs(368);
+    do_nothing_CMockExpectAnyArgs(431);
 
 
 
@@ -831,7 +893,7 @@ void test_fsm_FIRE_VALID_T(void)
 
    ((void *)0)
 
-   ), (UNITY_UINT)(376), UNITY_DISPLAY_STYLE_INT);
+   ), (UNITY_UINT)(439), UNITY_DISPLAY_STYLE_INT);
 
 
 
@@ -839,7 +901,7 @@ void test_fsm_FIRE_VALID_T(void)
 
    ((void *)0)
 
-   ), (UNITY_UINT)(378), UNITY_DISPLAY_STYLE_INT);
+   ), (UNITY_UINT)(441), UNITY_DISPLAY_STYLE_INT);
 
 
 
@@ -848,6 +910,10 @@ void test_fsm_FIRE_VALID_T(void)
 
 
 }
+
+
+
+
 
 
 
@@ -879,9 +945,9 @@ void test_fsm_ORIG_STATE_NOT_EQUAL_CURRENT_STATE(void)
 
 
 
-    check_func_CMockExpectAnyArgsAndReturn(394, 0);
+    check_func_CMockExpectAnyArgsAndReturn(459, 0);
 
-    check_func_CMockExpectAnyArgsAndReturn(395, 0);
+    check_func_CMockExpectAnyArgsAndReturn(460, 0);
 
 
 
@@ -905,13 +971,15 @@ void test_fsm_ORIG_STATE_NOT_EQUAL_CURRENT_STATE(void)
 
    ((void *)0)
 
-   ), (UNITY_UINT)(405), UNITY_DISPLAY_STYLE_INT);
+   ), (UNITY_UINT)(470), UNITY_DISPLAY_STYLE_INT);
 
 
 
     fsm_destroy(f);
 
 }
+
+
 
 
 
@@ -943,7 +1011,7 @@ void test_fsm_VALID_T_NO_INPUT_FUNC(void)
 
 
 
-    check_func_CMockExpectAnyArgsAndReturn(420, 0);
+    check_func_CMockExpectAnyArgsAndReturn(486, 0);
 
 
 
@@ -963,7 +1031,7 @@ void test_fsm_VALID_T_NO_INPUT_FUNC(void)
 
    ((void *)0)
 
-   ), (UNITY_UINT)(428), UNITY_DISPLAY_STYLE_INT);
+   ), (UNITY_UINT)(494), UNITY_DISPLAY_STYLE_INT);
 
 
 

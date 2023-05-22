@@ -95,22 +95,22 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
 int main(void)
 {
   UnityBegin("test_fsm.c");
-  run_test(test_fsm_validLastTransition, "test_fsm_validLastTransition", 86);
-  run_test(test_fsm_valid_state, "test_fsm_valid_state", 107);
-  run_test(test_fsm_NULL_argument_valid_InOut, "test_fsm_NULL_argument_valid_InOut", 130);
-  run_test(test_fsm_FMS_NEW_INDEPENDENT_FSM, "test_fsm_FMS_NEW_INDEPENDENT_FSM", 150);
-  run_test(test_fsm_NULL_IF_WRONG_DATA, "test_fsm_NULL_IF_WRONG_DATA", 186);
-  run_test(test_fsm_NULL_IFWRONGDATA_INIT, "test_fsm_NULL_IFWRONGDATA_INIT", 207);
-  run_test(test_fsm__INIT_F_NOT_NULL, "test_fsm__INIT_F_NOT_NULL", 227);
-  run_test(test_fsm_INIT_TT_NOT_NULL, "test_fsm_INIT_TT_NOT_NULL", 240);
-  run_test(test_fsm_INIT_TT_IS_VALID_NULL, "test_fsm_INIT_TT_IS_VALID_NULL", 256);
-  run_test(test_fsm_INIT_LAST_TT_IS_INVALID, "test_fsm_INIT_LAST_TT_IS_INVALID", 272);
-  run_test(test_fsm_INIT_VALID_STATES, "test_fsm_INIT_VALID_STATES", 288);
-  run_test(test_fsm_FIRE_IN_NULL, "test_fsm_FIRE_IN_NULL", 306);
-  run_test(test_fsm_FIRE_IN_VALID, "test_fsm_FIRE_IN_VALID", 333);
-  run_test(test_fsm_FIRE_VALID_T, "test_fsm_FIRE_VALID_T", 360);
-  run_test(test_fsm_ORIG_STATE_NOT_EQUAL_CURRENT_STATE, "test_fsm_ORIG_STATE_NOT_EQUAL_CURRENT_STATE", 386);
-  run_test(test_fsm_VALID_T_NO_INPUT_FUNC, "test_fsm_VALID_T_NO_INPUT_FUNC", 412);
+  run_test(test_fsm_validLastTransition, "test_fsm_validLastTransition", 118);
+  run_test(test_fsm_valid_state, "test_fsm_valid_state", 142);
+  run_test(test_fsm_NULL_argument_valid_InOut, "test_fsm_NULL_argument_valid_InOut", 168);
+  run_test(test_fsm_FMS_NEW_INDEPENDENT_FSM, "test_fsm_FMS_NEW_INDEPENDENT_FSM", 191);
+  run_test(test_fsm_NULL_IF_WRONG_DATA, "test_fsm_NULL_IF_WRONG_DATA", 229);
+  run_test(test_fsm_NULL_IFWRONGDATA_INIT, "test_fsm_NULL_IFWRONGDATA_INIT", 252);
+  run_test(test_fsm__INIT_F_NOT_NULL, "test_fsm__INIT_F_NOT_NULL", 275);
+  run_test(test_fsm_INIT_TT_NOT_NULL, "test_fsm_INIT_TT_NOT_NULL", 291);
+  run_test(test_fsm_INIT_TT_IS_VALID_NULL, "test_fsm_INIT_TT_IS_VALID_NULL", 310);
+  run_test(test_fsm_INIT_LAST_TT_IS_INVALID, "test_fsm_INIT_LAST_TT_IS_INVALID", 329);
+  run_test(test_fsm_INIT_VALID_STATES, "test_fsm_INIT_VALID_STATES", 347);
+  run_test(test_fsm_FIRE_IN_NULL, "test_fsm_FIRE_IN_NULL", 367);
+  run_test(test_fsm_FIRE_IN_VALID, "test_fsm_FIRE_IN_VALID", 396);
+  run_test(test_fsm_FIRE_VALID_T, "test_fsm_FIRE_VALID_T", 423);
+  run_test(test_fsm_ORIG_STATE_NOT_EQUAL_CURRENT_STATE, "test_fsm_ORIG_STATE_NOT_EQUAL_CURRENT_STATE", 451);
+  run_test(test_fsm_VALID_T_NO_INPUT_FUNC, "test_fsm_VALID_T_NO_INPUT_FUNC", 478);
 
   CMock_Guts_MemFreeFinal();
   return UnityEnd();
