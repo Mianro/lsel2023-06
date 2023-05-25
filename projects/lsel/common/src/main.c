@@ -8,7 +8,7 @@ snake_game_t game;
 
 int main(int argc, char* args[])
 {
-	snake_init(&game);
+snake_init(&game);
 
 
 	snake_reset_game(&game);

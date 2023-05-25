@@ -75,7 +75,24 @@
             "cStandard": "gnu17",
             "cppStandard": "gnu++17",
             "intelliSenseMode": "linux-gcc-arm"
-        }
+        },
+        {
+            "name": "stm32f411disco",
+            "includePath": [
+                "${workspaceFolder}/../../drivers/stm32f4xx/**",
+                "${workspaceFolder}/port/stm32f411disco/**",
+                "${workspaceFolder}/port/stm32f411disco/include/",
+                "${workspaceFolder}/common/**",
+                "${workspaceFolder}/common/include/"
+            ],
+            "defines": [
+                "STM32F411xE"
+            ],
+            "compilerPath": "/path/to/stm32f411disco/gcc/compiler",
+            "cStandard": "gnu17",
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "linux-gcc-arm"
+        }        
     ],
-    "version": 4
+    "version": 4 
 }

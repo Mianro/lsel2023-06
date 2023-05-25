@@ -24,6 +24,28 @@
             ]
         },
         {
+            "label": "BUILD DISCOVERY_STM32F411E",
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "linux": {
+                "command": "make"
+            },
+            "osx": {
+                "command": "make"
+            },
+            "windows": {
+                "command": "mingw32-make"
+            },
+            "args": [
+                "PLATFORM=discovery_stm32f411E"
+            ]
+        },
+        {
             "label": "Build Linux PC",
             "options": {
                 "cwd": "${workspaceRoot}"
@@ -143,6 +165,26 @@
             "args": [
                 "flash",
                 "PLATFORM=nucleo_stm32f411re"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Flash DISCOVERY_STM32F411E",
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "linux": {
+                "command": "make"
+            },
+            "osx": {
+                "command": "make"
+            },
+            "windows": {
+                "command": "mingw32-make"
+            },
+            "args": [
+                "flash",
+                "PLATFORM=discovery_stm32f411E"
             ],
             "problemMatcher": []
         },
