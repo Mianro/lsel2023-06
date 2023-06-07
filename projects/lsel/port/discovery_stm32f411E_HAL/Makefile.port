@@ -10,7 +10,7 @@ EXT = .elf
 ######################################
 # ATTENTION! To use the HAL define "USE_HAL_DRIVER" to "yes" (default "no")
 # In addition, stm32f4xx_hal_conf_template.h
-USE_HAL_DRIVER ?= no
+USE_HAL_DRIVER ?= yes
 
 ifeq ($(USE_HAL_DRIVER),no)
 $(info ************  BARE-METAL VERSION ************)
