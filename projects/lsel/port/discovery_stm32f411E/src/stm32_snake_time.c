@@ -156,9 +156,13 @@ void
 snake_time_delay_until_ms(uint32_t *p_t, uint32_t ms)
 {
   /* TODO Wait until the difference between current time and t is greater or equal than ms */
+  uint32_t pt = *p_t;
+  uint32_t snake_time = snake_time_get_ms();
+  uint32_t total_delay = pt + ms;
 
-    while (snake_time_get_ms() < *p_t + ms)
+    while (snake_time < total_delay)
   {
+    snake_time = snake_time_get_ms();
   }
 
   /* Update next tick */
@@ -175,7 +179,8 @@ snake_time_delay_ms (uint32_t ms)
 {
   /* TODO Implement with snake_time_delay_until */
   uint32_t current_ms = snake_time_get_ms();
-  uint32_t target_ms = current_ms + ms;
+  uint32_t target_ms = 0;
+  target_ms = ms;
 
   snake_time_delay_until_ms(&current_ms, target_ms);
 }

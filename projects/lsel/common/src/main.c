@@ -20,7 +20,7 @@ snake_init(&game);
 			snake_reset_game(&game);
 		}
 		snake_display_render(&game);
-		snake_time_delay_ms (150);
+		snake_time_delay_ms (300);
 	}
 
 	snake_reset_game(&game);
