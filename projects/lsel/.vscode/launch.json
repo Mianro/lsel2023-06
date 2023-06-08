@@ -18,7 +18,8 @@
                 "request": "launch",
                 "MIMode": "gdb",
                 "miDebuggerPath": "gdb",
-                "program": "${workspaceFolder}/output/${workspaceFolderBasename}"
+                "program": "${workspaceFolder}/output/${workspaceFolderBasename}",
+                "preLaunchTask": "Build Linux PC"
             },
             "osx": {
                 "name": "Debug PC -mac",

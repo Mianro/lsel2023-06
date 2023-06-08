@@ -79,6 +79,9 @@ snake_display_render(snake_game_t* p_game)
   fb->pixel[seg_i->x][seg_i->y]='@';
   
   clear_screen();
+
+  printf("Snake Bare-Metal\r\n");
+
   print_hlimit(p_game); 
 
   /* TODO Print every row with print_row */
