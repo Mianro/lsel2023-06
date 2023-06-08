@@ -71,7 +71,7 @@
             "defines": [
                 "STM32F411xE"
             ],
-            "compilerPath": "/opt/arm-toolchain-11.3/bin/arm-none-eabi-gcc",
+            "compilerPath": "/opt/arm-toolchain-10.3-2021/bin/arm-none-eabi-gcc",
             "cStandard": "gnu17",
             "cppStandard": "gnu++17",
             "intelliSenseMode": "linux-gcc-arm"

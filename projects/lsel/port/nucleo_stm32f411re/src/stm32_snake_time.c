@@ -1,6 +1,6 @@
 #include "snake_time.h"
 
-#include "stm32f4xx.h"
+#include "stm32l1xx.h"
 
 #define NVIC_PRIORITY_GROUP_0	((uint32_t)0x00000007)	/*!< 0 bits for pre-emption priority, 4 for sub-priority*/
 #define NVIC_PRIORITY_GROUP_4	((uint32_t)0x00000003)	/*!< 4 bits for pre-emption priority, 0 for sub-priority*/
@@ -64,8 +64,8 @@ static void system_clock_config(void)
 
   /* Initializes the RCC Oscillators. */
   /* Adjusts the Internal High Speed oscillator (HSI) calibration value.*/
-  RCC->CR &= ~RCC_CR_HSITRIM; // Clean and set value
-  RCC->CR |= (RCC_CR_HSITRIM & (RCC_HSI_CALIBRATION_DEFAULT << RCC_CR_HSITRIM_Pos));
+  RCC->CR &= ~RCC_ICSCR_HSITRIM; // Clean and set value
+  RCC->CR |= (RCC_ICSCR_HSITRIM & (RCC_HSI_CALIBRATION_DEFAULT << RCC_ICSCR_HSITRIM_Pos));
 
   /* RCC Clock Config */
   /* Initializes the CPU, AHB and APB buses clocks */
@@ -74,7 +74,7 @@ static void system_clock_config(void)
       (HCLK) and the supply voltage of the device. */
 
   /* Increasing the number of wait states because of higher CPU frequency */
-  FLASH->ACR = FLASH_ACR_LATENCY_2WS; /* Program the new number of wait states to the LATENCY bits in the FLASH_ACR register */
+  FLASH->ACR = FLASH_ACR_LATENCY; /* Program the new number of wait states to the LATENCY bits in the FLASH_ACR register */
 
   /* Change in clock source is performed in 16 clock cycles after writing to CFGR */
   RCC->CFGR &= ~RCC_CFGR_SW; // Clean and set value
@@ -92,10 +92,6 @@ int _stm32_init()
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   /* Configure Flash prefetch, Instruction cache, Data cache */
   /* Instruction cache enable */
-  FLASH->ACR |= FLASH_ACR_ICEN;
-
-  /* Data cache enable */
-  FLASH->ACR |= FLASH_ACR_DCEN;
 
   /* Prefetch cache enable */
   FLASH->ACR |= FLASH_ACR_PRFTEN;

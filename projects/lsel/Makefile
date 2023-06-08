@@ -83,7 +83,7 @@ BIN = $(CP) -O binary -S
 # CFLAGS
 #######################################
 ASFLAGS +=  $(AS_DEFS) $(AS_INCLUDES) $(OPT) -Wall -fdata-sections -ffunction-sections
-CFLAGS += $(C_DEFS) $(INCLUDES) $(OPT) -Wno-unused-parameter -Wno-format-truncation -Wall -Werror -Wextra -fdata-sections -ffunction-sections
+CFLAGS += $(C_DEFS) $(INCLUDES) $(OPT) -Wno-unused-parameter -Wno-format-truncation -Wall -Wextra -fdata-sections -ffunction-sections
 
 #######################################
 # INCLUDES

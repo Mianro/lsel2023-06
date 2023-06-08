@@ -9,7 +9,7 @@
  * @date 2022-12-19
  */
 #include <stdio.h>
-#include "stm32f4xx.h"
+#include "stm32l1xx.h"
 
 /**
  * @brief Function able to use printf via SWO:ITM. It prints the messages on a terminal in VSCode.

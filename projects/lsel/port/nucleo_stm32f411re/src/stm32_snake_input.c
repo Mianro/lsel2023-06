@@ -1,6 +1,6 @@
 #include "snake_input.h"
 
-#include "stm32f4xx.h"
+#include "stm32l1xx.h"
 
 #define BUTTON_PORT	GPIOC
 #define BUTTON_PIN	13
