@@ -1,0 +1,38 @@
+name: Despliegue del API de Doxygen
+
+on:
+  workflow_dispatch:
+  
+permissions:
+  pages: write
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v2
+        with:
+          ref: jf
+
+      - name: Configurar entorno de Doxygen
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y doxygen
+        
+      - name: Obtener Doxyfile del branch
+        uses: actions/checkout@v2
+        with:
+          ref: jf
+          path: docs/Doxyfile 
+
+      - name: Generar documentación
+        run: doxygen projects/lsel/Doxyfile
+
+      - name: Desplegar en gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: projects/lsel/docs/html

@@ -1,0 +1,58 @@
+name: Despliegue del API de Doxygen y GCOVR
+on:
+  workflow_dispatch:
+  
+permissions:
+  pages: write
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    
+      - name: Checkout del repositorio
+        uses: actions/checkout@v2
+        with: 
+          ref: jf
+
+      - name: Configurar entorno de Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+          
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7
+          
+      - name: Install Ceedling
+        run: gem install ceedling
+
+      - name: Instalar Doxygen y GCOVR
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y doxygen
+          pip install gcovr
+
+      - name: Generar documentación
+        run: doxygen projects/lsel/Doxyfile
+
+      - name: Ejecutar pruebas con Ceedling
+        run: |
+          cd projects/lsel/ceedling
+          ceedling test:all
+          ceedling gcov:all utils:gcov
+          mkdir -p projects/lsel/docs
+          cp -r build/artifacts/gcov projects/lsel/docs
+          echo "<a href="html/index.html">Doxygen</a></br><a href="gcov/GcovCoverageResults.html">GCOV</a>" > index.html
+
+      - name: Desplegar en gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: projects/lsel/docs
+
+ 
+
+

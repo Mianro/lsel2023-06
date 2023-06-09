@@ -1,0 +1,78 @@
+---
+:source:
+  :path: test
+  :file: test_fsm.c
+:successes:
+- :test: test_fsm_validLastTransition
+  :line: 118
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_valid_state
+  :line: 142
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_NULL_argument_valid_InOut
+  :line: 168
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_FMS_NEW_INDEPENDENT_FSM
+  :line: 191
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_NULL_IF_WRONG_DATA
+  :line: 229
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_NULL_IFWRONGDATA_INIT
+  :line: 252
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm__INIT_F_NOT_NULL
+  :line: 275
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_INIT_TT_NOT_NULL
+  :line: 291
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_INIT_TT_IS_VALID_NULL
+  :line: 310
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_INIT_LAST_TT_IS_INVALID
+  :line: 329
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_INIT_VALID_STATES
+  :line: 347
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_FIRE_IN_NULL
+  :line: 367
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_FIRE_IN_VALID
+  :line: 396
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_FIRE_VALID_T
+  :line: 423
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_ORIG_STATE_NOT_EQUAL_CURRENT_STATE
+  :line: 451
+  :message: ''
+  :unity_test_time: 0
+- :test: test_fsm_VALID_T_NO_INPUT_FUNC
+  :line: 478
+  :message: ''
+  :unity_test_time: 0
+:failures: []
+:ignores: []
+:counts:
+  :total: 16
+  :passed: 16
+  :failed: 0
+  :ignored: 0
+:stdout: []
+:time: 0.001561910001328215

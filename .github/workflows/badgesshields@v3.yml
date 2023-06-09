@@ -1,0 +1,16 @@
+name: Añadir badge de estado de pruebas
+
+on:
+  workflow_dispatch:
+
+jobs:
+  add-badge:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Añadir badge de estado de pruebas
+        uses: badges/shields@v3
+        with:
+          name: Estado de las pruebas
+          message: ${{ job.status }}
+          color: ${{ job.status == 'success' ? 'brightgreen' : 'red' }}
