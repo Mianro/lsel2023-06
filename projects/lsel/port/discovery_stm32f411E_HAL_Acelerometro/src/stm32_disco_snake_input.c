@@ -40,7 +40,7 @@ snake_input_init(snake_game_t* p_game)
   BSP_ACCELERO_Init(); 
 
   button_flag = 0;
-  button_heading = UP;
+  button_heading = NONE;
 
   GPIO_InitTypeDef GPIO_InitStruct;
   GPIO_InitStruct.Pin = GPIO_PIN_0;
@@ -83,30 +83,43 @@ snake_input_update_new_heading (snake_game_t* p_game)
     /* From RIGHT to UP */
     /* From UP to LEFT */
   BSP_ACCELERO_GetXYZ(acceleroData);
-  int data_x = 0;
-  data_x = acceleroData[0];
 
-  if (data_x > 30000){
-    button_flag =1; 
+
+
+  if (acceleroData[0] > 3000){
+    button_heading = RIGHT; 
+  }else if(acceleroData[0] < -3000){
+    button_heading = LEFT; 
+  } 
+    
+  if (acceleroData[1] > 3000){
+    button_heading = UP; 
+  }else if(acceleroData[1] < -3000){
+    button_heading = DOWN; 
   } 
   
-  if (button_flag) {
-      /* TODO */
-      if (button_heading == LEFT) {
-         button_heading = DOWN; 
-         p_game->new_heading = DOWN;
-      } else if (button_heading == DOWN) {
-        button_heading = RIGHT;
-        p_game->new_heading = RIGHT;
-      } else if (button_heading == RIGHT) {
-        button_heading = UP;
-        p_game->new_heading = UP;
-      } else if (button_heading == UP) {
-        button_heading = LEFT;
+
+
+  switch (button_heading) {
+      case LEFT:
         p_game->new_heading = LEFT;
-      }
-    button_flag = 0;
-    }
+        break;
+      case DOWN:
+        p_game->new_heading = DOWN;
+        break;
+      case UP:
+        p_game->new_heading = UP;
+        break;
+      case RIGHT:
+        p_game->new_heading = RIGHT;
+        break;
+      default:
+        
+        break;
+  }
+
+button_heading = NONE; 
+
 }
 
 void
