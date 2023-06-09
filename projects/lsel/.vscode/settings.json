@@ -6,5 +6,8 @@
         "mode": "gcc"
     },
     "ceedlingExplorer.debugConfiguration": "Ceedling - Debug test",
-    "ceedlingExplorer.projectPath": "./ceedling"
+    "ceedlingExplorer.projectPath": "./ceedling",
+    "*.port": "makefile"
+    "cortex-debug.armToolchainPath": "/opt/gcc-arm-none-eabi-10.3-2021.10/bin"
+
 }

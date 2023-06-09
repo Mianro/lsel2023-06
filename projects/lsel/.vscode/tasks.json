@@ -1,9 +1,281 @@
 {
+    "version": "2.0.0",
     "tasks": [
         {
+            "label": "Build NUCLEO_STM32F411RE",
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "linux": {
+                "command": "make"
+            },
+            "osx": {
+                "command": "make"
+            },
+            "windows": {
+                "command": "mingw32-make"
+            },
+            "args": [
+                "PLATFORM=nucleo_stm32f411re"
+            ]
+        },
+        {
+            "label": "BUILD DISCOVERY_STM32F411E",
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "linux": {
+                "command": "make"
+            },
+            "osx": {
+                "command": "make"
+            },
+            "windows": {
+                "command": "mingw32-make"
+            },
+            "args": [
+                "PLATFORM=discovery_stm32f411E"
+            ]
+        },
+        {
+            "label": "BUILD DISCOVERY_STM32F411E_HAL",
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "linux": {
+                "command": "make"
+            },
+            "osx": {
+                "command": "make"
+            },
+            "windows": {
+                "command": "mingw32-make"
+            },
+            "args": [
+                "PLATFORM=discovery_stm32f411E_HAL"
+            ]
+        },
+        {
+            "label": "BUILD DISCOVERY_STM32F411E_HAL_ACEL",
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "linux": {
+                "command": "make"
+            },
+            "osx": {
+                "command": "make"
+            },
+            "windows": {
+                "command": "mingw32-make"
+            },
+            "args": [
+                "PLATFORM=discovery_stm32f411E_HAL_Acelerometro"
+            ]
+        },
+        {
+            "label": "Build Linux PC",
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "group": {
+                "kind": "build"
+            },
+            "linux": {
+                "command": "make"
+            },
+            "osx": {
+                "command": "make"
+            },
+            "windows": {
+                "command": "mingw32-make"
+            },
+            "args": [
+                "PLATFORM=linux"
+            ]
+        },
+        {
+            "label": "Build Rpi PC",
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "group": {
+                "kind": "build"
+            },
+            "linux": {
+                "command": "make"
+            },
+            "osx": {
+                "command": "make"
+            },
+            "windows": {
+                "command": "mingw32-make"
+            },
+            "args": [
+                "PLATFORM=rpi"
+            ]
+        },
+        {
+            "label": "Build Cross RPi Hat",
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "group": {
+                "kind": "build"
+            },
+            "linux": {
+                "command": "make"
+            },
+            "osx": {
+                "command": "make"
+            },
+            "windows": {
+                "command": "mingw32-make"
+            },
+            "args": [
+                "PLATFORM=rpi PREFIX=arm-linux-gnueabihf-"
+            ]
+        },
+        {
+            "label": "Build Cross RPi linux",
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "group": {
+                "kind": "build"
+            },
+            "linux": {
+                "command": "make"
+            },
+            "osx": {
+                "command": "make"
+            },
+            "windows": {
+                "command": "mingw32-make"
+            },
+            "args": [
+                "PLATFORM=linux PREFIX=arm-linux-gnueabihf-"
+            ]
+        },
+        {
+            "label": "Clean",
+            "command": "make",
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "linux": {
+                "command": "make"
+            },
+            "osx": {
+                "command": "make"
+            },
+            "windows": {
+                "command": "mingw32-make"
+            },
+            "args": [
+                "clean"
+            ]
+        },
+        {
+            "label": "Flash NUCLEO_STM32F411RE",
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "linux": {
+                "command": "make"
+            },
+            "osx": {
+                "command": "make"
+            },
+            "windows": {
+                "command": "mingw32-make"
+            },
+            "args": [
+                "flash",
+                "PLATFORM=nucleo_stm32f411re"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Flash DISCOVERY_STM32F411E",
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "linux": {
+                "command": "make"
+            },
+            "osx": {
+                "command": "make"
+            },
+            "windows": {
+                "command": "mingw32-make"
+            },
+            "args": [
+                "flash",
+                "PLATFORM=discovery_stm32f411E"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Flash DISCOVERY_STM32F411E_HAL",
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "linux": {
+                "command": "make"
+            },
+            "osx": {
+                "command": "make"
+            },
+            "windows": {
+                "command": "mingw32-make"
+            },
+            "args": [
+                "flash",
+                "PLATFORM=discovery_stm32f411E_HAL"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Flash DISCOVERY_STM32F411E_HAL_ACEL",
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "linux": {
+                "command": "make"
+            },
+            "osx": {
+                "command": "make"
+            },
+            "windows": {
+                "command": "mingw32-make"
+            },
+            "args": [
+                "flash",
+                "PLATFORM=discovery_stm32f411E_HAL_Acelerometro"
+            ],
+            "problemMatcher": []
+        },
+        {
             "type": "cppbuild",
-            "label": "C/C++: gcc-9 compilar archivo activo",
-            "command": "/usr/bin/gcc-9",
+            "label": "C/C++: gcc compilar archivo activo",
+            "command": "/usr/bin/gcc",
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
@@ -17,12 +289,8 @@
             "problemMatcher": [
                 "$gcc"
             ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
+            "group": "build",
             "detail": "Tarea generada por el depurador."
         }
-    ],
-    "version": "2.0.0"
+    ]
 }
